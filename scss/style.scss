@@ -460,10 +460,12 @@ canvas {
 }
 
 .home__slide-number {
-    font-size: 35px;
     margin-bottom: 40px;
-    font-family: 'Inter-Black';
-    color: #f3d31c;
+    .home__slide-num{
+        font-size: 35px;
+        font-family: 'Inter-Black';
+        color: #f3d31c;
+    }
     span{
         font-family: 'Inter-Light';
         color: white;
@@ -1123,10 +1125,18 @@ label{
 //=================REFERRAL============================
 
 
+.referral{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
 
 .referral__content {
     margin-top: 80px;
+    margin-bottom: 20px;
     max-width: 500px;
+   
 }
 .referral__title {
     font-family: 'Inter-Black';
@@ -1312,7 +1322,9 @@ label{
         width: 65px;
     }
     .home__slide-number{
-        font-size: 26px;
+        .home__slide-num{
+            font-size: 26px;
+        }
         span{
             font-size: 16px;
         }

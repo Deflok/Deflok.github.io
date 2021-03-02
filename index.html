@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soda</title>
     <link rel="Shortcut Icon" href="img/logo.ico">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
     <script src="js/jquery.onepage-scroll.min.js"></script>
     <link rel="stylesheet" href="css/onepage-scroll.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -87,7 +88,7 @@
         </div>
 
         <div class="home__slide-number">
-            01<span>/06</span>
+            <span class="home__slide-num">01</span><span>/06</span>
         </div>
     </div>
 
@@ -298,11 +299,13 @@
 
                 <div class="referral__input-btns">
                     <button class="referral__btn-copy">Copy link</button>
-                    <button class="referral__btn-banners">Banners</button>
+                    <button data-bs-target="#modal__banners" data-bs-toggle="modal" type="button"
+                        class="referral__btn-banners">Banners</button>
                 </div>
                 <div class="referral__rewards">Available rewards: <span>23144<span> APE</span></div>
                 <button class="btn-yellow referral__rewards-btn">Claim reward</button>
             </div>
+            <img class="referral__bg" height="500px" src="img/referral-bg.png" alt="">
         </section>
 
 
@@ -389,19 +392,34 @@
     <script src="js/tsparticles.min.js"></script>
     <script src="js/script.js"></script>
 
-
+    <!-- скрипт блочной прокрутке -->
     <script>
         $(".main").onepage_scroll({
             sectionContainer: "section", // контейнер, к которому будет применяться скролл
             easing: "ease", // Тип анимации "ease", "linear", "ease-in", "ease-out", "ease-in-out"
             animationTime: 1000, // время анимации
             pagination: true, // скрыть или отобразить пагинатор
-            updateURL: false // обновлять URL или нет
+            updateURL: true, // обновлять URL или нет
         });
     </script>
 
+    <!-- скрипт счетчика секций -->
+    <script>
+        $(window).on("mousewheel DOMMouseScroll", function (e) {
+            let paramsString = document.location.hash;
+            console.log(paramsString);
+            let x = paramsString.replace("#", "0");
+            $(".home__slide-num").empty();
+            $(".home__slide-num").append(x);
+        });
+        $(window).bind('hashchange', function () {
+            let paramsString = document.location.hash;
+            console.log(paramsString);
+            let x = paramsString.replace("#", "0");
+            $(".home__slide-num").empty();
+            $(".home__slide-num").append(x);
+        });
     </script>
-
 
 </body>
 
