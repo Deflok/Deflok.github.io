@@ -11,8 +11,9 @@
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> -->
     <script src="js/jquery.onepage-scroll.min.js"></script>
     <link rel="stylesheet" href="css/onepage-scroll.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"> -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -79,7 +80,8 @@
     <div class="right__panel">
         <div class="home__time">
             <img width="26px" src="img/icons/time.svg" alt="">
-            <div class="home__time-date">23:45<br><span>25 DEC</span></div>
+            <div class="home__time-date"><span class="home__time-date-t">23:45</span><br><span
+                    class="home__time-date-d">25 DEC</span></div>
         </div>
 
         <div class="home__lan">
@@ -281,7 +283,7 @@
         </section>
 
         <section class="referral">
-            <div class="referral__content">
+            <div class="referral__inner">
                 <h2 class="referral__title">Referral program</h2>
                 <div class="referral__perc">7%-3%-1%</div>
                 <div class="referral__text">
@@ -304,26 +306,144 @@
                 </div>
                 <div class="referral__rewards">Available rewards: <span>23144<span> APE</span></div>
                 <button class="btn-yellow referral__rewards-btn">Claim reward</button>
+
             </div>
+
             <img class="referral__bg" height="500px" src="img/referral-bg.png" alt="">
         </section>
 
-
-
-
-
-
-
         <section class="about">
-
+            <div class="about__inner">
+                <h2 class="about__title">About tokken</h2>
+                <div class="about__text">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur impedit mollitia a alias
+                        minus
+                        eligendi unde quos inventore numquam porro. Ad labore ducimus aut fugit sunt corrupti porro
+                        dignissimos in?</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit omnis quae fuga ratione
+                        quisquam
+                        quia eum voluptatem nihil eligendi corporis delectus rerum sunt non amet laudantium, deleniti
+                        blanditiis ducimus. Est.</p>
+                    <p>Veritatis iure hic fuga eaque saepe minima, maiores corrupti fugiat rerum deserunt. Eaque est
+                        deleniti nesciunt adipisci dolorem labore iste laborum, ab, quibusdam sapiente vero blanditiis,
+                        beatae error quia perferendis!</p>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Suscipit, excepturi voluptas? Culpa
+                        incidunt praesentium provident voluptatibus repudiandae sequi ex sed. Earum rem placeat unde
+                        illum ex cupiditate repudiandae dolorem fugit?</p>
+                </div>
+                <button class="btn-yellow">Invest</button>
+            </div>
+            <img class="about__bg" src="img/coins.png" height="500px" alt="">
         </section>
+
         <section class="exchange">
-
+            <div class="exchange__inner">
+                <h2 class="exchange__title">Exchange</h2>
+                <div class="exchange__text">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil harum atque quo illo, odio,
+                        beatae deleniti ut sit, perferendis nisi distinctio vel modi! Iste autem dolores recusandae
+                        accusamus tempore! Maiores?
+                        Dignissimos itaque reprehenderit amet tenetur. Consequatur, sit? Non recusandae perspiciatis
+                        natus fuga ex eos neque nisi eligendi, expedita impedit vero explicabo sit nulla? Laudantium
+                        quaerat, blanditiis architecto est nesciunt natus.</p>
+                </div>
+                <label>Soda:<input type="number" class="exchange__input" value="0.0"></label>
+                <label>Tron:<input type="number" class="exchange__input" value="0.0"></label>
+                <div class="exchange__price">
+                    Price
+                    <span class="exchange__price-number">0.0364793 BNB PER ALPHA</span>
+                </div>
+                <button class="btn-yellow">Exchange</button>
+            </div>
+            <img class="exchange__bg" height="500px" src="img/exchange-bg.png" alt="">
         </section>
+
         <section class="lottery">
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal__buy">
-                Launch demo modaler hersthrt hrt hdrt hdrt hdrt hdr
-            </button>
+            <div class="lottery__inner">
+
+                <div class="lottery__left">
+                    <h2 class="lottery__title">The soda lottery</h2>
+                    <div class="lottery__text">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel pe</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, reiciendis expedita tempore
+                            dolore eveniet ullam, facilis voluptatum perspiciatis nobis corrupti ad repudiandae enim rem
+                            saepe laudantium asperiores. Iusto, vero nihil?</p>
+                    </div>
+                    <div class="lottery__progress">
+                        <div class="lottery__progress-line"></div>
+                    </div>
+                    <div class="lottery__time">10h, 1m <span>Until ticket sale</span></div>
+                    <div class="lottery__time-sm">2h, 1m Until lottery draw</div>
+
+                    <div class="lottery__balance">
+                        <h3 class="lottery__balance-title">Your balance available for withdrawal</h3>
+                        <div class="lottery__balance-wrap">
+                            <div class="lottery__balance-number">1354</div>
+                            <button class="lottery__balance-btn btn-yellow">Withdraw</button>
+                        </div>
+                    </div>
+
+                    <div class="lottery__winnum">
+                        <h3 class="lottery__winnum-title">Latest winning numbers</h3>
+                        <div class="lottery__winnum-inner">
+                            <div class="lottery__winnum-ball">1</div>
+                            <div class="lottery__winnum-ball">2</div>
+                            <div class="lottery__winnum-ball">3</div>
+                            <div class="lottery__winnum-ball">4</div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="lottery__right">
+
+                    <div class="lottery__total">
+                        <div class="lottery__round">ROUND: <span>134</span></div>
+                        <div class="lottery__pot">
+                            <img class="lottery__pot-img" src="img/banka_soda.png" alt="">
+                            <div class="lottery__pot-inner">
+                                <h3 class="lottery__pot-title">Total pot</h3>
+                                <div class="lottery__pot-number">13 541 <span>SODA</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lottery__ticket">
+                        <div class="lottery__ticket-inner">
+                            <img class="lottery__ticket-img" src="img/tickets.png" alt="">
+                            <div class="lottery__ticket-text">
+                                <h3 class="lottery__ticket-title">Your tickeets for this round</h3>
+                                <div class="lottery__ticket-number">1354</div>
+                            </div>
+                        </div>
+                        <button class="lottery__ticket-btn-left" type="button" data-bs-toggle="modal" data-bs-target="#modal__buy">View your tickets</button>
+                        <button class="lottery__ticket-btn-right btn-yellow">Approve soda</button>
+                        <img class="lottery__bottle" src="img/bottle-lottery.png" alt="">
+                    </div>
+
+                    <div class="lottery__lastwin">
+                        <h3 class="lottery__lastwin-title">Last winners</h3>
+                        <div class="lottery__lastwin-inner">
+                            <div class="lottery__lastwin-col">
+                                User_631133456711<br>
+                                User_6311336711<br>
+                                User_631133456711<br>
+                                User_63113345698711<br>
+                                User_6311
+                            </div>
+                            <div class="lottery__lastwin-col">
+                                User_631133456711<br>
+                                User_6311336711<br>
+                                User_631133456711<br>
+                                User_63113345698711<br>
+                                User_6311
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
         </section>
 
     </div>
@@ -386,11 +506,15 @@
 
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> -->
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/tsparticles.min.js"></script>
     <script src="js/script.js"></script>
+
+
+    <!--============= СКРИПТЫ ================-->
 
     <!-- скрипт блочной прокрутке -->
     <script>
@@ -419,6 +543,45 @@
             $(".home__slide-num").empty();
             $(".home__slide-num").append(x);
         });
+    </script>
+
+
+
+    <!-- скрипт времени и даты на сайте -->
+    <script type="text/javascript">
+        /* функция добавления ведущих нулей */
+        /* (если число меньше десяти, перед числом добавляем ноль) */
+        function zero_first_format(value) {
+            if (value < 10) {
+                value = '0' + value;
+            }
+            return value;
+        }
+
+        /* функция получения текущей даты и времени */
+        function date_time() {
+            var current_datetime = new Date();
+            var hours = zero_first_format(current_datetime.getHours());
+            var minutes = zero_first_format(current_datetime.getMinutes());
+
+            return hours + ":" + minutes;
+        }
+        function date_date() {
+            var current_datetime = new Date();
+            var day = zero_first_format(current_datetime.getDate());
+            var month = zero_first_format(current_datetime.getMonth() + 1);
+
+            return day + "." + month;
+        }
+
+
+
+        /* каждую секунду получаем текущую дату и время */
+        /* и вставляем значение в блок с id "current_date_time_block2" */
+        setInterval(function () {
+            document.querySelector('.home__time-date-t').innerHTML = date_time();
+            document.querySelector('.home__time-date-d').innerHTML = date_date();
+        }, 1000);
     </script>
 
 </body>
