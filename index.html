@@ -115,8 +115,8 @@
                     <p>Enim perferendis nisi reprehenderit, quis excepturi quibusdam necessitatibus maiores quaerat
                         consequuntur beatae cum dignissimos ratione tempore? Repudiandae sapiente, facilis adipisci,
                         minima eos vero repellat voluptates illo tempora fuga excepturi porro!</p>
-                    <button class="btn-yellow">Invest now</button>
                 </div>
+                <button class="btn-yellow">Invest now</button>
             </div>
 
             <div class="home__slider">
@@ -144,23 +144,15 @@
                                 <div class="bottle__inner-circle">apr:<br>217.85%</div>
                                 earn:<br>soda
                             </div>
-                            <img src="img/soda_bottle.png" class="d-block w-100" alt="...">
+                            <img src="img/bottle-orange.png" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
                             <div class="bottle__inner">
-                                tron-soda
+                                soda-soda
                                 <div class="bottle__inner-circle">apr:<br>217.85%</div>
                                 earn:<br>soda
                             </div>
-                            <img src="img/soda_bottle.png" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <div class="bottle__inner">
-                                tron-soda
-                                <div class="bottle__inner-circle">apr:<br>217.85%</div>
-                                earn:<br>soda
-                            </div>
-                            <img src="img/soda_bottle.png" class="d-block w-100" alt="...">
+                            <img src="img/bottle-green.png" class="d-block w-100" alt="...">
                         </div>
                     </div>
                     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
@@ -203,7 +195,7 @@
                         <div class="bottle__inner-circle bottle__inner-circle-1">apr:<br>217.85%</div>
                         earn:<br>soda
                     </div>
-                    <img class="pools__cards-bootle" src="img/soda_bottle.png" alt="">
+                    <img class="pools__cards-bootle" src="img/bottle-orange.png" alt="">
 
 
 
@@ -236,7 +228,7 @@
                         <div class="bottle__inner-circle">apr:<br>217.85%</div>
                         earn:<br>soda
                     </div>
-                    <img class="pools__cards-bootle" src="img/bottl-green.png" alt="">
+                    <img class="pools__cards-bootle" src="img/bottle-green.png" alt="">
 
 
 
@@ -259,7 +251,7 @@
 
 
                 <div class="pools__cards-item">
-                    <img class="pools__cards-item-calc" width="100px" src="img/icons/calcul_big.svg" alt="">
+                    <img class="pools__cards-item-calc" src="img/icons/calcul_big.svg" alt="">
                     <div class="pools__cards-txt">Choose a bottle:</div>
                     <div class="pools__cards-choose-btns">
                         <button class="pools__cards-choose-btn"><img src="img/choose-btn1.png"
@@ -309,7 +301,7 @@
 
             </div>
 
-            <img class="referral__bg" height="500px" src="img/referral-bg.png" alt="">
+            <img class="referral__bg" src="img/referral-bg.png" alt="">
         </section>
 
         <section class="about">
@@ -333,7 +325,7 @@
                 </div>
                 <button class="btn-yellow">Invest</button>
             </div>
-            <img class="about__bg" src="img/coins.png" height="500px" alt="">
+            <img class="about__bg" src="img/coins.png" alt="">
         </section>
 
         <section class="exchange">
@@ -355,7 +347,7 @@
                 </div>
                 <button class="btn-yellow">Exchange</button>
             </div>
-            <img class="exchange__bg" height="500px" src="img/exchange-bg.png" alt="">
+            <img class="exchange__bg" src="img/exchange-bg.png" alt="">
         </section>
 
         <section class="lottery">
@@ -529,20 +521,20 @@
 
     <!-- скрипт счетчика секций -->
     <script>
-        $(window).on("mousewheel DOMMouseScroll", function (e) {
+        setInterval(function () {
             let paramsString = document.location.hash;
-            console.log(paramsString);
             let x = paramsString.replace("#", "0");
             $(".home__slide-num").empty();
             $(".home__slide-num").append(x);
-        });
-        $(window).bind('hashchange', function () {
-            let paramsString = document.location.hash;
-            console.log(paramsString);
-            let x = paramsString.replace("#", "0");
-            $(".home__slide-num").empty();
-            $(".home__slide-num").append(x);
-        });
+        }, 1000);
+
+        // $(window).bind('hashchange', function () {
+        //     let paramsString = document.location.hash;
+        //     console.log(paramsString);
+        //     let x = paramsString.replace("#", "0");
+        //     $(".home__slide-num").empty();
+        //     $(".home__slide-num").append(x);
+        // });
     </script>
 
 

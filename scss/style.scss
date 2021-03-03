@@ -741,6 +741,7 @@ canvas {
 
 //=================POOLS============================
 
+
 .pools__cards {
     display: flex;
     justify-content: space-between;
@@ -760,6 +761,7 @@ canvas {
             margin-left: -35px;
             margin-top: 20px;
             margin-bottom: 20px;
+            width: 100px;
         }
     }
     &:first-child {
@@ -858,7 +860,6 @@ label {
         margin-top: 5px;
     }
     position: relative;
-    z-index: 2;
 }
 
 .pools__cards-choose-btns {
@@ -1014,6 +1015,7 @@ label {
 }
 
 .referral__bg {
+    width: 500px;
     margin-top: auto;
     margin-left: auto;
 }
@@ -1043,6 +1045,7 @@ label {
 }
 
 .about__bg {
+    width: 500px;
     margin-top: auto;
     margin-left: auto;
 }
@@ -1100,6 +1103,7 @@ label {
     margin-top: 10px;
 }
 .exchange__bg {
+    width: 500px;
     margin-top: auto;
     margin-left: auto;
 }
@@ -1616,7 +1620,407 @@ label {
         font-size: 16px;
         margin-right: 194px;
     }
+    .home__right{
+        max-width: 250px;
+        margin-bottom: 130px;
+    }
+    .home__about{
+        max-width: 370px;
+        margin-bottom: 130px;
+    }
+    .home__slider{
+        width: 540px;
+        margin-bottom: 75px;
+    }
+    .carousel{
+        max-width: 100%;
+    }
+    .home__about-text{
+        font-size: 16px;
+        margin-bottom: 60px;
+        line-height: 20px;
+    }
+    .home__referral-text{
+        line-height: 20px;
+    }
+    .home__about-title{
+        font-size: 24px;
+    }
+    .home__stat{
+        height: 155px;
+        width: 940px;
+        border-radius: 80px;
+        top: 100px;
+    }
+    .home__stat-total{
+        font-size: 30px;
+        line-height: 40px;
+    }
+    .stat__total-number{
+        font-size: 40px;
+    }
+    .stat__total-suptxt{
+        font-size: 24px;
+    }
+    .home__stat-value{
+        font-size: 30px;
+        line-height: 40px;
+    }
+    .stat__total-number{
+        font-size: 30px;
+    }
+    .stat__total-suptxt{
+        font-size: 18px;
+    }
+
+    .right__panel {
+        width: 160px;
+    }
     .onepage-pagination{
+        right: 60px;
+    }
+    .home__slide-number{
+        margin-bottom: 70px;
+    }
+    .home__slide-num{
+        font-size: 36px;
+    }
+    .home__slide-number{
+        span{
+            font-size: 18px;
+        }
+    }
+    .home__time{
+        margin-top: 70px;
+    }
+    .home__right-calc{
+        margin-bottom: 120px;
+    }
+    .bottle__inner{
+        font-size: 23px;
+        transform: translateX(-36%);
+        top: 48%;
+    }
+    .bottle__inner-circle{
+        width: 135px;
+        height: 135px;
+        border-radius: 50%;
+        font-size: 23px;
+        line-height: 30px;
+    }
+    .onepage-pagination::before, .onepage-pagination::after{
+        height: 170px;
+    }
+    .onepage-pagination{
+        top: 55%;
+    }
+    .home__lan{
+        margin-top: -615px;
+    }
+    .onepage-pagination::before{
+        top: -150%;
+    }
+    .carousel-control-prev-icon{
+        background-size: 45px;
+        background-position-y: center;
+        width: 8rem;
+        height: 8rem;
+        margin-top: 155px;
+    }
+    .carousel-control-next-icon{
+        background-size: 45px;
+        background-position-y: center;
+        width: 8rem;
+        height: 8rem;
+        margin-top: 155px;
+    }
+
+
+
+
+
+
+
+    .pools{
+        display: flex;
+        align-items: center;
+    }
+    .pools__cards{
+        padding-top: 0;
+        padding-left: 105px;
+        width: 100%;
+        margin-top: -50px;
+
+    }
+    .pools__cards-item{
+        height: 450px;
+        width: 372px;
+        &:last-child{
+            width: 325px;
+            padding-left: 65px;
+        }
+        &:first-child{
+            margin-left: 0;
+        }
+        margin-left: 64px;
+        margin-right: 64px;
+
+        padding-left: 125px;
+        &:nth-child(2) {
+            .pools__cards-title{
+                color: #c7fd54;
+            }
+            .pools__cards-btn{
+                background-color: #c7fd54;
+            }
+            .pools__cards-input{
+                color: #c7fd54;
+            }
+            .pools__cards-txt{
+                span{
+                    color: #c7fd54;
+                }
+              
+            }
+        }
+    }
+    .pools__cards-bootle{
+        width: 470px;
+        left: -250px;
+        bottom: -208px;
+    }
+    .pools__cards-title{
+        font-size: 24px;
+        margin-top: 25px;
+        margin-bottom: 15px;
+    }
+    .pools__cards-item{
+        font-size: 18px;
+    }
+    .pools__cards-count{
+        width: 190px;
+        height: 40px;
+        padding-left: 55px;
+    }
+    .pools__cards-btn{
+        height: 40px;
+        width: 190px;
+        margin-top: 12px;
+        margin-bottom: 18px;
+    }
+    .pools__cards-input{
+        width: 190px;
+        height: 50px;
+        font-size: 24px;
+        margin-bottom: 0;
+    }
+    .pools__cards-txt{
+        margin-bottom: 12px;
+    }
+    .pools__cards-item-calc{
+        width: 130px;
+        margin-left: -60px !important;
+        margin-top: 28px !important;
+    }
+    .pools__cards-choose-btns{
+        margin-top: 15px;
+        margin-bottom: 20px; 
+        justify-content: flex-start;
+        margin-left: 0;
+    }
+    .pools__cards-choose-btn{
+        width: 100px;
+        height: 100px;
+    }
+    .pools__cards-btn-calc{
+        left: 74px;
+        bottom: -142px;
+    }
+    .pools__cards-txt-calc-2{
+        bottom: -75px;
+        left: 65px;
+    }
+    .pools__cards-txt-calc-1{
+        bottom: -44px;
+        left: 78px;
+    }
+    .pools__cards-choose-btn{
+        font-size: 16px;
+    }
+
+    .referral__bg{
+        width: 850px;
+    }
+    .about__bg{
+        width: 850px;
+    }
+    .exchange__bg{
+        width: 850px;
+    }
+    .referral__inner{
+        max-width: 540px;
+    }
+    .referral__title{
+        font-size: 48px;
+    }
+    
+    .referral__perc{
+        font-size: 72px;
+    }
+    .referral__text{
+        font-size: 15px;
+        margin-bottom: 40px;
+        line-height: 20px;
+    }
+  
+    .referral__link{
+        width: 380px;
+    }
+    .referral__btn-copy{
+        margin-right: 15px;
+    }
+    .referral__input-btns{
+        margin-top: 10px;
+        min-width: 380px;
+        button{
+            width: 100%;
+        }
+    }
+    .referral__rewards-btn{
+        width: 190px;
+        height: 35px;
+    }
+    .referral__rewards{
+        font-size: 24px;
+    }
+    .referral__title{
+        margin-bottom: 50px;
+    }
+
+    .about__text{
+        line-height: 20px;
+    }
+    .exchange__inner{
+        min-width: 500px;
+    }
+    .exchange__text{
+        line-height: 20px;
+    }
+    .exchange__text{
+        margin-bottom: 30px;
+    }
+    .exchange__input{
+        margin-bottom: 20px;
+        width: 380px;
+    }
+    .exchange__price{
+        margin-top: 30px;
+        margin-bottom: 10px;
+        max-width: 380px;
+        height: 110px;
+        font-size: 18px;
+    }
+    .btn-yellow{
+        width: 190px;
+        height: 40px;
+    }
+
+
+
+
+
+
+
+
+
+
+    .lottery__inner{
+        width: 1200px;
+    }
+    .lottery__title{
+        font-size: 48px;
+    }
+    .lottery__text{
+        font-size: 15px;
+    }
+    .lottery__time{
+        font-size: 24px;
+        span{
+            font-size: 18px;
+        }
         
+    }
+    .lottery__balance-title{
+        font-size: 24px;
+    }
+    .lottery__balance-number{
+        font-size: 48px;
+    }
+    .lottery__winnum-title{
+        font-size: 24px;
+    }
+    .lottery__winnum-ball{
+        width: 126px;
+        height: 126px;
+        font-size: 72px;
+    }
+    .lottery__balance{
+        margin-top: 35px;
+        margin-bottom: 30px;
+        padding: 40px 50px;
+    }
+    .lottery__text{
+        margin-bottom: 40px;
+        line-height: 20px;
+        
+    }
+    .lottery__winnum-ball:nth-child(2n+1){
+        margin-top: 30px;
+        
+    }
+    .lottery__total{
+        padding: 40px 50px;
+    }
+    .lottery__ticket{
+        padding: 40px 50px;
+    }
+    .lottery__lastwin{
+        padding: 40px 50px;
+    }
+    .lottery__round{
+        font-size: 24px;
+    }
+    .lottery__pot{
+        font-size: 24px;
+    }
+    .lottery__pot-number{
+        font-size: 48px;
+    }
+    .lottery__ticket-title{
+        font-size: 24px;
+    }
+    .lottery__ticket-number{
+        font-size: 48px;
+    }
+    .lottery__ticket-inner{
+        margin-bottom: 20px;
+    }
+    .lottery__lastwin-title{
+        font-size: 24px;
+    }
+    .lottery__lastwin-inner{
+        margin-top: 15px;
+        font-size: 15px;
+    }
+    .lottery__lastwin-col{
+        line-height: 20px;
+    }
+    .lottery__progress{
+        height: 20px;
+    }
+    .lottery__bottle{
+        bottom: -142px;
+        right: -230px;
+        width: 320px;
     }
 }
