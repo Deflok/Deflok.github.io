@@ -640,19 +640,31 @@ canvas {
     font-size: 13px;
 }
 .home__referral-btn {
-    height: 34px;
-    min-width: 170px;
+    margin-top: 20px !important;
+    &::before,
+    &::after {
+        display: none;
+    }
+    position: relative;
+    right: 0;
+    li a {
+        height: 34px;
+        min-width: 170px;
 
-    border: 1px solid #f3d31c;
-    background: transparentize(white, 0.8);
-    border-radius: 50px;
+        border: 1px solid #f3d31c;
+        background: transparentize(white, 0.8);
+        border-radius: 50px;
 
-    text-transform: uppercase;
-    font-family: "Inter-Regular";
-    color: #f3d31c;
-    font-size: 12px;
+        text-transform: uppercase;
+        font-family: "Inter-Regular";
+        color: #f3d31c;
+        font-size: 12px;
 
-    margin-top: 20px;
+        margin-top: 20px;
+        &::before {
+            display: none;
+        }
+    }
 }
 
 //=================home-status============================
@@ -740,7 +752,6 @@ canvas {
 }
 
 //=================POOLS============================
-
 
 .pools__cards {
     display: flex;
@@ -865,8 +876,43 @@ label {
 .pools__cards-choose-btns {
     display: flex;
     justify-content: center;
-    margin-left: -35px;
+    margin-left: -30px;
+    label {
+        margin-right: 10px;
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }
+
+label .pools__cards-choose-btn {
+    display: none;
+}
+label .pools__cards-choose-btn + div {
+    content: "\a";
+}
+.pools__div-1,
+.pools__div-2 {
+    border-radius: 50%;
+    position: relative;
+    span {
+        display: inline-block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-transform: uppercase;
+        font-family: "Inter-Bold";
+        color: #444444;
+    }
+}
+label .pools__cards-choose-btn:checked + .pools__div-1 {
+    box-shadow: 0 0 20px 5px #f3d31c, 0px 0px 25px #f3d31c inset;
+}
+label .pools__cards-choose-btn:checked + .pools__div-2 {
+    box-shadow: 0 0 20px 5px #bbfb4e, 0px 0px 25px #bbfb4e inset;
+}
+
 .pools__cards-choose-btn {
     img {
         width: 100%;
@@ -881,16 +927,6 @@ label {
     }
     background: transparent;
     position: relative;
-    span {
-        display: inline-block;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        text-transform: uppercase;
-        font-family: "Inter-Bold";
-        color: #444444;
-    }
 
     margin-right: 5px;
     font-size: 12px;
@@ -1228,9 +1264,9 @@ label {
     padding: 20px 30px;
 }
 .lottery__round {
-    span{
+    span {
         color: #f3d31c;
-        font-family: 'Inter-Black';
+        font-family: "Inter-Black";
         font-size: 18px;
     }
 }
@@ -1246,11 +1282,11 @@ label {
 }
 .lottery__pot-number {
     font-size: 40px;
-    font-family: 'Inter-Black';
+    font-family: "Inter-Black";
     color: #f3d31c;
-    span{
+    span {
         font-size: 20px;
-        font-family: 'Inter-Regular';
+        font-family: "Inter-Regular";
         color: white;
     }
 }
@@ -1266,11 +1302,11 @@ label {
     display: flex;
 }
 
-.lottery__ticket-img, .lottery__pot-img{
+.lottery__ticket-img,
+.lottery__pot-img {
     margin: 20px;
     width: 70px;
 }
-
 
 .lottery__ticket-text {
 }
@@ -1281,7 +1317,7 @@ label {
 .lottery__ticket-number {
     font-size: 40px;
     color: #f3d31c;
-    font-family: 'Inter-Black';
+    font-family: "Inter-Black";
 }
 .lottery__ticket-btn-left {
     height: 34px;
@@ -1310,7 +1346,6 @@ label {
     width: 210px;
 }
 
-
 .lottery__lastwin {
     width: 100%;
     background: transparentize(white, 0.8);
@@ -1330,9 +1365,6 @@ label {
 .lottery__lastwin-col {
     line-height: 20px;
 }
-
-
-
 
 //=================MODAL============================
 
@@ -1461,7 +1493,57 @@ label {
 
 
 
+/*             burger menu
+    -------------------------------------------------*/
+.burger__menu {
+    width: 40px;
+    height: 25px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 10000;
+}
 
+.burger {
+    width: 40px;
+    height: 3px;
+    background: #fff;
+    position: relative;
+}
+
+.burger:before,
+.burger:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #fff;
+    transition: all 0.2s linear;
+}
+
+.burger:before {
+    top: -10px;
+}
+.burger:after {
+    top: 10px;
+}
+
+.burger__active:before {
+    transform: rotate(-38deg);
+    width: 15px;
+    transform-origin: left bottom;
+    top: 0.5px;
+}
+
+.burger__active:after {
+    transform: rotate(38deg);
+    width: 15px;
+    transform-origin: left top;
+    top: -0.5px;
+}
 
 
 
@@ -1471,6 +1553,8 @@ label {
 
 
 //=================MEDIA REQUIRES============================
+
+//=================Style for 1024x768============================
 
 @media screen and (max-width: 1300px) {
     //=================sidebar and top panel============================
@@ -1590,144 +1674,561 @@ label {
     }
 
     //=================pools-content============================
+    .pools__cards-bootle {
+        width: 240px;
+    }
+    .pools__cards-item {
+        padding-left: 50px;
+    }
+    .pools__cards-item {
+        margin: 0 34px;
+        border-radius: 15px;
+    }
+    .pools__cards-item:first-child {
+        margin-left: 80px;
+    }
+    .bottle__inner-circle {
+        width: 60px;
+        height: 60px;
+    }
+    .bottle__inner {
+        font-size: 10px;
+        line-height: 14px;
+    }
 }
 
 
-@media screen and (min-width: 1900px) {
-    .sidebar{
-        width: 285px;
+
+
+
+
+
+
+@media screen and (max-width: 991px) {
+    .burger__menu{
+        display: flex;
     }
-    .nav__list.onepage-pagination li a{
-        padding: 25px 0px 25px 40px;
+    .main {
+        padding-left: 10px;
     }
-    .main{
-        padding: 0px 194px 0px 345px;
+    .top__panel {
+        padding-left: 5px;
+        height: 50px;
+    }
+    .sidebar {
+        transform: translateX(-100%);
+        margin-top: 50px;
+        transition: transform linear 0.2s;
+    }
+    .sidebar__active {
+        transform: translateX(0%);
+    }
+
+    .top__panel-btn {
+        height: 26px;
+        width: 100%;
+        font-size: 8px;
+        padding: 0 10px;
+        line-height: 10px;
+        margin-right: 10px;
+        &:last-child {
+            margin-right: 0px;
+        }
+    }
+    .top__panel-btns {
+        width: 100%;
+        position: relative;
+        margin-left: 10px;
+    }
+
+    .top__panel-total{
+        padding: 4px 8px;
+        display: flex;
+        flex-direction: column;
+        width: 300px !important;
     }
     .onepage-wrapper .section{
-        padding-right: 538px;
+        padding-right: 78px;
+        display: flex;
+        align-items: center;
+    }
+    .home.section{
+        flex-direction: column;
+    }
+    .home__about{
+        max-width: 100%;
+        margin-bottom: 0;
+    }
+    .btn-yellow{
+        margin-top: 10px;
+    }
+    .carousel{
+        max-width: 330px;
+    }
+    .home__slider{
+        margin-top: -25px;
+    }
+    .home__right{
+        max-width: 100%;
+        position: relative;
+        padding: 0 200px;
+       
+    }
+
+    .home__right-calc{
+        position: absolute;
+        top: -40px;
+        margin-bottom: 0 !important;
+        left: 15px;
+    }
+    .home__referral-btn{
+        position: absolute;
+        top: -60px;
+        right: 10px;
+        margin-top: 0 !important;
+        padding: 0 !important;
+       
+    }
+    .pools__cards{
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding-top: 0;
+    }
+    .pools__cards-item{
+        padding-bottom: 10px;
+        padding-right: 10px;
+        padding-left: 210px;
+        label{
+            display: block;
+        }
+        margin-top: 20px;
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 20px;
+        &:first-child{
+            margin-top: 0;
+        }
+        &:last-child{
+            margin-bottom: 0;
+            
+        }
+    }
+    .pools__cards-item:first-child{
+        margin-left: 0;
+    }
+    .pools__cards-txt{
+        display: inline-block;
+    }
+    .pools__cards-title{
+        display: inline-block;
+    }
+    .pools__cards-txt{
+        display: block;
+        margin-bottom: 5px;
+    }
+    .pools__cards-bootle{
+        left: -30px;
+        bottom: -30px;
+        width: 205px;
+    }
+    .pools__cards-item-calc{
+        display: inline-block;
+        width: 100px;
+        margin: 0;
+    }
+    .pools__cards-title{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .pools__cards-count{
+        margin-bottom: 5px;
+    }
+    .pools__cards-btn{
+        margin-bottom: 5px;
+    }
+    .bottle__inner{
+        left: 70px;
+        bottom: 20px;
+    }
+    .pools__cards-choose-btns{
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .pools__cards-btn-calc{
+        
+        left: 294px;
+        bottom: 18px;
+    }
+    .pools__cards-txt-calc-1{
+        bottom: -30px;
+    }
+    .pools__cards-txt-calc-2{
+        bottom: -30px;
+        left: 235px;
+    }
+
+    .exchange__input{
+        max-width: 250px;
+        min-width: 250px;
+    }
+    .exchange__price{
+        max-width: 250px;
+    }
+    .exchange__bg, .referral__bg, .about__bg{
+        width: 400px;
+    }
+    .referral__link{
+        min-width: 250px;
+        max-width: 250px;
+    }
+    .referral__input-btns{
+        min-width: 250px;
+        max-width: 250px;
+        font-size: 10px;
+    }
+    .referral__inner{
+        max-width: 280px;
+    }
+
+    .bottle__inner{
+        left: 168px;
+    }
+    .lottery__inner{
+        width: 700px;
+    }
+    .lottery__bottle{
+        bottom: -65px;
+        right: -65px;
+    }
+    .bottle__inner-1{
+        left: 71px !important;
+    }
+    .bottle__inner-2{
+        left: 71px !important;
+    }
+    .sidebar{
+        padding-bottom: 50px;
+    }
+}
+
+
+
+
+/*             Style for phone
+    -------------------------------------------------*/
+
+@media screen and (max-width: 767px) {
+    .right__panel{
+        display: none;
+    }
+    .onepage-pagination{
+        display: none;
+    }
+    .nav__list{
+        display: block;
+    }
+    .home__referral-btn{
+        display: block;
+    }
+    .top__panel-btns{
+        width: 85%;
     }
     .top__panel{
+        flex-wrap: wrap;
+    }
+    .top__panel-total{
+        width: 100% !important;
+        margin-right: 0;
+        margin-top: 5px;
+    }
+    .sidebar{
+        margin-top: 30px;
+    }
+    .onepage-wrapper .section{
+        padding-right: 20px;
+        padding-top: 68px;
+    }
+    .home__about-title{
+        font-size: 12px;
+    }
+    .home__about-text{
+        font-size: 10px;
+    }
+    .btn-yellow{
+        height: 30px;
+        min-width: 100px;
+        max-width: 100px;
+        margin-top: 0;
+    }
+    .carousel{
+        max-width: 180px;
+    }
+    .home__stat{
+        height: 64px;
+        width: 326px;
+        
+    }
+    .home__stat-total{
+        font-size: 12px;
+    }
+    .home__stat-value{
+        font-size: 12px;
+        line-height: 15px;
+    }
+    .stat__total-number{
+        font-size: 12px;
+    }
+    .stat__total-suptxt{
+        font-size: 10px !important;
+    }
+    .home__stat-total{
+        margin-left: -20px;
+    }
+    .home__slider{
+        margin-top: -40px;
+    }
+    .home__right-calc{
+        min-width: 156px;
+        height: 30px;
+    }
+    .home__referral-btn li a{
+        min-width: 124px;
+        max-width: 124px;
+        height: 30px;
+    }
+    .home__right{
+        padding: 0;
+        margin-top: -42px;
+    }
+    .home__referral-title{
+        margin-bottom: 5px;
+    }
+    .home__referral-title{
+        font-size: 12px;
+    }
+    .home__referral-text{
+        font-size: 10px;
+    }
+
+    .bottle__inner{
+        left: 89px;
+    }
+    .bottle__inner-circle{
+        width: 50px;
+        height: 50px;
+    }
+
+    .pools__cards-bootle{
+        width: 135px;
+        left: -25px;
+        bottom: -6px;
+    }
+    .pools__cards-item{
+        padding-left: 100px;
+        margin-top: 0;
+        margin-bottom: 10px;
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 12px;
+    }
+    .pools__cards-title{
+        font-size: 12px;
+    }
+    .pools__cards-count{
+        background-size: 12%;
+        width: 165px;
+        height: 25px;
+    }
+    .pools__cards-txt{
+        font-size: 12px;
+        span{
+            font-size: 12px;
+        }
+    }
+    .pools__cards-input{
+        padding: 2px;
+        font-size: 12px;
+    }
+    .pools__cards-total{
+        font-size: 12px;
+    }
+    .bottle__inner-1{
+        display: none;
+    }
+    .pools__cards-item-calc{
+        width: 70px !important;
+        margin-top: 5px !important;
+        margin-bottom: 5px !important;
+    }
+    .pools__div-1, .pools__div-2{
+        img{
+            width: 70px;
+        }
+    }
+    .pools__cards-txt-calc-1{
+        bottom: -20px;
+    }
+    .pools__cards-item:last-child{
+        width: 340px;
+    }
+    .pools__cards-btn-calc{
+        left: 196px;
+        bottom: 70px;
+    }
+    
+    .pools__cards-item-calc{
+        display: none;
+    }
+}
+
+
+
+
+
+
+
+
+@media screen and (min-width: 1900px) {
+    .sidebar {
+        width: 285px;
+    }
+    .nav__list.onepage-pagination li a {
+        padding: 25px 0px 25px 40px;
+    }
+    .main {
+        padding: 0px 194px 0px 345px;
+    }
+    .onepage-wrapper .section {
+        padding-right: 538px;
+    }
+    .top__panel {
         height: auto;
         padding-top: 64px;
         padding-left: 345px;
     }
-    .top__panel-btn{
+    .top__panel-btn {
         height: 40px;
         width: 190px;
     }
-    .top__panel-total{
+    .top__panel-total {
         padding: 18px 50px;
         font-size: 16px;
         margin-right: 194px;
     }
-    .home__right{
+    .home__right {
         max-width: 250px;
         margin-bottom: 130px;
     }
-    .home__about{
+    .home__about {
         max-width: 370px;
         margin-bottom: 130px;
     }
-    .home__slider{
+    .home__slider {
         width: 540px;
         margin-bottom: 75px;
     }
-    .carousel{
+    .carousel {
         max-width: 100%;
     }
-    .home__about-text{
+    .home__about-text {
         font-size: 16px;
         margin-bottom: 60px;
         line-height: 20px;
     }
-    .home__referral-text{
+    .home__referral-text {
         line-height: 20px;
     }
-    .home__about-title{
+    .home__about-title {
         font-size: 24px;
     }
-    .home__stat{
+    .home__stat {
         height: 155px;
         width: 940px;
         border-radius: 80px;
         top: 100px;
     }
-    .home__stat-total{
+    .home__stat-total {
         font-size: 30px;
         line-height: 40px;
     }
-    .stat__total-number{
+    .stat__total-number {
         font-size: 40px;
     }
-    .stat__total-suptxt{
+    .stat__total-suptxt {
         font-size: 24px;
     }
-    .home__stat-value{
+    .home__stat-value {
         font-size: 30px;
         line-height: 40px;
     }
-    .stat__total-number{
+    .stat__total-number {
         font-size: 30px;
     }
-    .stat__total-suptxt{
+    .stat__total-suptxt {
         font-size: 18px;
     }
 
     .right__panel {
         width: 160px;
     }
-    .onepage-pagination{
+    .onepage-pagination {
         right: 60px;
     }
-    .home__slide-number{
+    .home__slide-number {
         margin-bottom: 70px;
     }
-    .home__slide-num{
+    .home__slide-num {
         font-size: 36px;
     }
-    .home__slide-number{
-        span{
+    .home__slide-number {
+        span {
             font-size: 18px;
         }
     }
-    .home__time{
+    .home__time {
         margin-top: 70px;
     }
-    .home__right-calc{
+    .home__right-calc {
         margin-bottom: 120px;
     }
-    .bottle__inner{
+    .home__referral-btn {
+        right: 0;
+        margin-top: 50px !important;
+    }
+    .bottle__inner {
         font-size: 23px;
         transform: translateX(-36%);
         top: 48%;
     }
-    .bottle__inner-circle{
+    .bottle__inner-circle {
         width: 135px;
         height: 135px;
         border-radius: 50%;
         font-size: 23px;
         line-height: 30px;
     }
-    .onepage-pagination::before, .onepage-pagination::after{
+    .onepage-pagination::before,
+    .onepage-pagination::after {
         height: 170px;
     }
-    .onepage-pagination{
+    .onepage-pagination {
         top: 55%;
     }
-    .home__lan{
+    .home__lan {
         margin-top: -615px;
     }
-    .onepage-pagination::before{
+    .onepage-pagination::before {
         top: -150%;
     }
-    .carousel-control-prev-icon{
+    .carousel-control-prev-icon {
         background-size: 45px;
         background-position-y: center;
         width: 8rem;
         height: 8rem;
         margin-top: 155px;
     }
-    .carousel-control-next-icon{
+    .carousel-control-next-icon {
         background-size: 45px;
         background-position-y: center;
         width: 8rem;
@@ -1735,31 +2236,24 @@ label {
         margin-top: 155px;
     }
 
-
-
-
-
-
-
-    .pools{
+    .pools {
         display: flex;
         align-items: center;
     }
-    .pools__cards{
+    .pools__cards {
         padding-top: 0;
         padding-left: 105px;
         width: 100%;
         margin-top: -50px;
-
     }
-    .pools__cards-item{
+    .pools__cards-item {
         height: 450px;
         width: 372px;
-        &:last-child{
+        &:last-child {
             width: 325px;
             padding-left: 65px;
         }
-        &:first-child{
+        &:first-child {
             margin-left: 0;
         }
         margin-left: 64px;
@@ -1767,258 +2261,245 @@ label {
 
         padding-left: 125px;
         &:nth-child(2) {
-            .pools__cards-title{
+            .pools__cards-title {
                 color: #c7fd54;
             }
-            .pools__cards-btn{
+            .pools__cards-btn {
                 background-color: #c7fd54;
             }
-            .pools__cards-input{
+            .pools__cards-input {
                 color: #c7fd54;
             }
-            .pools__cards-txt{
-                span{
+            .pools__cards-txt {
+                span {
                     color: #c7fd54;
                 }
-              
             }
         }
     }
-    .pools__cards-bootle{
+    .pools__cards-bootle {
         width: 470px;
         left: -250px;
         bottom: -208px;
     }
-    .pools__cards-title{
+    .pools__cards-title {
         font-size: 24px;
         margin-top: 25px;
         margin-bottom: 15px;
     }
-    .pools__cards-item{
+    .pools__cards-item {
         font-size: 18px;
     }
-    .pools__cards-count{
+    .pools__cards-count {
         width: 190px;
         height: 40px;
         padding-left: 55px;
     }
-    .pools__cards-btn{
+    .pools__cards-btn {
         height: 40px;
         width: 190px;
         margin-top: 12px;
         margin-bottom: 18px;
     }
-    .pools__cards-input{
+    .pools__cards-input {
         width: 190px;
         height: 50px;
         font-size: 24px;
         margin-bottom: 0;
     }
-    .pools__cards-txt{
+    .pools__cards-txt {
         margin-bottom: 12px;
     }
-    .pools__cards-item-calc{
+    .pools__cards-item-calc {
         width: 130px;
         margin-left: -60px !important;
         margin-top: 28px !important;
     }
-    .pools__cards-choose-btns{
+    .pools__cards-choose-btns {
         margin-top: 15px;
-        margin-bottom: 20px; 
+        margin-bottom: 20px;
         justify-content: flex-start;
         margin-left: 0;
     }
-    .pools__cards-choose-btn{
+    .pools__cards-choose-btn {
         width: 100px;
         height: 100px;
     }
-    .pools__cards-btn-calc{
+    .pools__cards-btn-calc {
         left: 74px;
         bottom: -142px;
     }
-    .pools__cards-txt-calc-2{
+    .pools__cards-txt-calc-2 {
         bottom: -75px;
         left: 65px;
     }
-    .pools__cards-txt-calc-1{
+    .pools__cards-txt-calc-1 {
         bottom: -44px;
         left: 78px;
     }
-    .pools__cards-choose-btn{
+    .pools__cards-choose-btn {
         font-size: 16px;
     }
 
-    .referral__bg{
+    .referral__bg {
         width: 850px;
     }
-    .about__bg{
+    .about__bg {
         width: 850px;
     }
-    .exchange__bg{
+    .exchange__bg {
         width: 850px;
     }
-    .referral__inner{
+    .referral__inner {
         max-width: 540px;
     }
-    .referral__title{
+    .referral__title {
         font-size: 48px;
     }
-    
-    .referral__perc{
+
+    .referral__perc {
         font-size: 72px;
     }
-    .referral__text{
+    .referral__text {
         font-size: 15px;
         margin-bottom: 40px;
         line-height: 20px;
     }
-  
-    .referral__link{
+
+    .referral__link {
         width: 380px;
     }
-    .referral__btn-copy{
+    .referral__btn-copy {
         margin-right: 15px;
     }
-    .referral__input-btns{
+    .referral__input-btns {
         margin-top: 10px;
         min-width: 380px;
-        button{
+        button {
             width: 100%;
         }
     }
-    .referral__rewards-btn{
+    .referral__rewards-btn {
         width: 190px;
         height: 35px;
     }
-    .referral__rewards{
+    .referral__rewards {
         font-size: 24px;
     }
-    .referral__title{
+    .referral__title {
         margin-bottom: 50px;
     }
 
-    .about__text{
+    .about__text {
         line-height: 20px;
     }
-    .exchange__inner{
+    .exchange__inner {
         min-width: 500px;
     }
-    .exchange__text{
+    .exchange__text {
         line-height: 20px;
     }
-    .exchange__text{
+    .exchange__text {
         margin-bottom: 30px;
     }
-    .exchange__input{
+    .exchange__input {
         margin-bottom: 20px;
         width: 380px;
     }
-    .exchange__price{
+    .exchange__price {
         margin-top: 30px;
         margin-bottom: 10px;
         max-width: 380px;
         height: 110px;
         font-size: 18px;
     }
-    .btn-yellow{
+    .btn-yellow {
         width: 190px;
         height: 40px;
     }
 
-
-
-
-
-
-
-
-
-
-    .lottery__inner{
+    .lottery__inner {
         width: 1200px;
     }
-    .lottery__title{
+    .lottery__title {
         font-size: 48px;
     }
-    .lottery__text{
+    .lottery__text {
         font-size: 15px;
     }
-    .lottery__time{
+    .lottery__time {
         font-size: 24px;
-        span{
+        span {
             font-size: 18px;
         }
-        
     }
-    .lottery__balance-title{
+    .lottery__balance-title {
         font-size: 24px;
     }
-    .lottery__balance-number{
+    .lottery__balance-number {
         font-size: 48px;
     }
-    .lottery__winnum-title{
+    .lottery__winnum-title {
         font-size: 24px;
     }
-    .lottery__winnum-ball{
+    .lottery__winnum-ball {
         width: 126px;
         height: 126px;
         font-size: 72px;
     }
-    .lottery__balance{
+    .lottery__balance {
         margin-top: 35px;
         margin-bottom: 30px;
         padding: 40px 50px;
     }
-    .lottery__text{
+    .lottery__text {
         margin-bottom: 40px;
         line-height: 20px;
-        
     }
-    .lottery__winnum-ball:nth-child(2n+1){
+    .lottery__winnum-ball:nth-child(2n + 1) {
         margin-top: 30px;
-        
     }
-    .lottery__total{
+    .lottery__total {
         padding: 40px 50px;
     }
-    .lottery__ticket{
+    .lottery__ticket {
         padding: 40px 50px;
     }
-    .lottery__lastwin{
+    .lottery__lastwin {
         padding: 40px 50px;
     }
-    .lottery__round{
+    .lottery__round {
         font-size: 24px;
     }
-    .lottery__pot{
+    .lottery__pot {
         font-size: 24px;
     }
-    .lottery__pot-number{
+    .lottery__pot-number {
         font-size: 48px;
     }
-    .lottery__ticket-title{
+    .lottery__ticket-title {
         font-size: 24px;
     }
-    .lottery__ticket-number{
+    .lottery__ticket-number {
         font-size: 48px;
     }
-    .lottery__ticket-inner{
+    .lottery__ticket-inner {
         margin-bottom: 20px;
     }
-    .lottery__lastwin-title{
+    .lottery__lastwin-title {
         font-size: 24px;
     }
-    .lottery__lastwin-inner{
+    .lottery__lastwin-inner {
         margin-top: 15px;
         font-size: 15px;
     }
-    .lottery__lastwin-col{
+    .lottery__lastwin-col {
         line-height: 20px;
     }
-    .lottery__progress{
+    .lottery__progress {
         height: 20px;
     }
-    .lottery__bottle{
+    .lottery__bottle {
         bottom: -142px;
         right: -230px;
         width: 320px;

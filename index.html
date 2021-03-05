@@ -66,6 +66,13 @@
     </aside>
 
     <div class="top__panel">
+
+        <div class="burger__menu">
+            <div class="burger"></div>
+        </div>
+        
+
+
         <div class="top__panel-btns">
             <button class="top__panel-btn">Audit telescr</button>
             <button class="top__panel-btn">Audit hazesecurity</button>
@@ -178,7 +185,10 @@
                         omnis, ut consequatur ipsam, harum adipisci molestiae voluptate. Saepe nulla commodi quis
                         provident quos eum tempora quisquam!</p>
                 </div>
-                <button class="home__referral-btn">Your referral</button>
+                <ul class="onepage-pagination home__referral-btn">
+                    <li> <a data-index="3"  href="#3">Your referral</a></li>
+                </ul>
+               
             </div>
 
         </section>
@@ -254,10 +264,10 @@
                     <img class="pools__cards-item-calc" src="img/icons/calcul_big.svg" alt="">
                     <div class="pools__cards-txt">Choose a bottle:</div>
                     <div class="pools__cards-choose-btns">
-                        <button class="pools__cards-choose-btn"><img src="img/choose-btn1.png"
-                                alt=""><span>tron-soda</span></button>
-                        <button class="pools__cards-choose-btn"><img src="img/choose-btn2.png"
-                                alt=""><span>soda-soda</span></button>
+                        <label><input checked type="radio" name="btn-choose" class="pools__cards-choose-btn"><div class="pools__div-1" ><img src="img/choose-btn1.png"
+                            alt=""><span>tron-soda</span></div></label>
+                        <label><input type="radio" name="btn-choose" class="pools__cards-choose-btn"><div class="pools__div-2" ><img src="img/choose-btn2.png"
+                            alt=""><span>soda-soda</span></div></label>
                     </div>
 
                     <label>Soda earned: <input value="45277" class="pools__cards-input" type="number"></label>
@@ -575,6 +585,27 @@
             document.querySelector('.home__time-date-d').innerHTML = date_date();
         }, 1000);
     </script>
+
+
+
+
+    <script>
+
+
+document.querySelector('.burger__menu').onclick = function (){
+	document.querySelector('.burger').classList.toggle('burger__active');
+    document.querySelector('.sidebar').classList.toggle('sidebar__active');
+}
+
+
+    </script>
+
+<script>
+    window.onScroll = function(){
+        return false;
+    }
+    
+</script>
 
 </body>
 
